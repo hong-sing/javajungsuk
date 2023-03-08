@@ -4,7 +4,7 @@ class Product {
     int price;
     int bonusPoint;
 
-//    Product() {}
+    Product() {}
 
     Product(int price) {
         this.price = price;
@@ -29,5 +29,4 @@ class Exercise7_5 {
 /*
  Product를 상속받았기 때문에 생성자 Tv()가 호출되면 Product의 기본생성자가 호출된다.
  하지만 Product에는 기본생성자가 없기 때문에 에러가 발생한다. 따라서 Product의 기본생성자를 추가해야한다.
-
 */
