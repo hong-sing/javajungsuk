@@ -1,6 +1,6 @@
 package ch6_oop;
 
-public class SutdaCard {
+class SutdaCard {
     int num;
     boolean isKwang;
 
