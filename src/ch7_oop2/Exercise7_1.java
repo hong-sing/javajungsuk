@@ -25,6 +25,36 @@ class SutdaDeck {
 //            cards[i] = new SutdaCard(num,isKwang);
 //        }
     }
+
+    // 7-2 세 개의 메서드 작성
+    void shuffle() {
+        int new_idx = (int) (Math.random()* cards.length);
+        for (int i=0; i<cards.length; i++) {
+            SutdaCard tmp = cards[i];
+            cards[i] = cards[new_idx];
+            cards[new_idx] = tmp;
+        }
+
+//        for (int x=0; x< cards.length*2; x++) {
+//            int i = (int)(Math.random()* cards.length);
+//            int j = (int)(Math.random()* cards.length);
+//
+//            SutdaCard tmp = cards[i];
+//            cards[i] = cards[j];
+//            cards[j] = tmp;
+//        }
+    }
+
+    SutdaCard pick(int index) {
+        if (index<0 || index>=CARD_NUM) return null;
+        return cards[index];
+    }
+
+    SutdaCard pick() {
+        int idx = (int) (Math.random()* cards.length);
+        return cards[idx];
+//        return pick(idx);
+    }
 }
 
 class SutdaCard {
@@ -50,8 +80,15 @@ class Exercise7_1 {
     public static void main(String[] args) {
         SutdaDeck deck = new SutdaDeck();
 
+        System.out.println(deck.pick(0));
+        System.out.println(deck.pick());
+        deck.shuffle();
+
         for (int i=0; i<deck.cards.length; i++) {
-            System.out.println(deck.cards[i]+",");
+            System.out.print(deck.cards[i]+",");
         }
+
+        System.out.println();
+        System.out.println(deck.pick(0));
     }
 }
